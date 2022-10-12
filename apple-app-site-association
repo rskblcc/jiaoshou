@@ -1,10 +1,10 @@
 {
     "applinks": {
         "apps": [],
-        "details": [ //如果有多个App需要支持Universal，details数组中可配置多个App的信息
+        "details": [
             {
-                "appID": "365UMLZKZ6.com.te-note.tenote", //自行替换TeamID和BundleID
-                "paths": [ "/app" ] //path 过滤需要处理的地址，不需要过滤处理则配置通配符*
+                "appID": "365UMLZKZ6.com.te-note.tenote",
+                "paths": [ "/app/" ]
             }
         ]
     }
