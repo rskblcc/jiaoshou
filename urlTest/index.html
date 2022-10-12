@@ -1,0 +1,17 @@
+<meta name='apple-itunes-app' content='app-id=477927812'>
+<!-- 而对于点击链接后，能否直接打开，可以通过下面的代码来实现。前提条件：你得知道你的APP对应的打开协议，如贴吧APP，协议为：com.baidu.tieba:// ，微信的：weixin:// ，and so on。。。 -->
+
+<!-- a标签的链接，设置为对应的下载链接；点击打开的动作，在click事件中注册 -->
+<a href="https://itunes.apple.com/cn/app/id477927812" id="openApp">贴吧客户端</a>
+<script type="text/javascript">
+document.getElementById('openApp').onclick = function(e){
+// 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+// 否则打开a标签的href链接
+var ifr = document.createElement('iframe');
+ifr.src = 'com.baidu.tieba://';
+ifr.style.display = 'none';
+document.body.appendChild(ifr);
+window.setTimeout(function(){
+document.body.removeChild(ifr);
+},3000)
+};
